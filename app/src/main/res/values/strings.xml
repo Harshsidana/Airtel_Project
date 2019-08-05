@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Airtel Assignment</string>
+    <string name="error_fetching_text">Some Error fetching details</string>
+    <string name="username_text">Username</string>
+    <string name="name_text">Name</string>
+    <string name="url_text">Url</string>
+    <string name="avatar_text">Avatar</string>
+    <string name="repo_desc_text">Repo Description</string>
+    <string name="repo_name_text">Repo Name</string>
+    <string name="repo_url_text">Repo Url</string>
+    <string name="bundle_text">Bundle</string>
+
+
+
+
+</resources>

@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion SDK_COMPILE_VERSION
+    defaultConfig {
+        applicationId "com.appstreet.airtelassignment"
+        minSdkVersion SDK_MIN_VERSION
+        targetSdkVersion SDK_TARGET_VERSION
+        versionCode BUILD_VERSION_CODE
+        versionName BUILD_VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        /*manifestPlaceholders = [GOOGLE_MAP_API_KEY: GOOGLE_MAP_API_KEY,
+                                FABRIC_API_KEY    : FABRIC_API_KEY]
+        buildConfigField 'String', "APPCENTER_APP_SECRET", "\"${APPCENTER_APP_SECRET}\""*/
+
+
+    }
+    /*signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }*/
+    buildTypes {
+        debug {
+            minifyEnabled false
+            resValue "string", "application_name", "AirtelAssignment - Dev"
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "application_name", "Fitness"
+            applicationIdSuffix ".app"
+        }
+    }
+    kapt {
+        generateStubs = true
+    }
+    sourceSets {
+        test {
+            java {
+                srcDirs += [
+                        /*project(':feature:intro').file("src/test/java")*/
+                ]
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:appcompat-$support_versiom"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "androidx.cardview:cardview:$card_view_version"
+    implementation "com.hannesdorfmann:adapterdelegates4:$adapterdelegates_version"
+    implementation "com.google.android.exoplayer:exoplayer:$exoplayer_version"
+    implementation "com.github.HaarigerHarald:android-youtubeExtractor:$youtube_extractor"
+
+
+    implementation "com.github.bumptech.glide:glide:4.8.0"
+    kapt "com.github.bumptech.glide:compiler:4.8.0"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
+
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    testImplementation 'androidx.arch.core:core-testing:2.0.1'
+    androidTestImplementation "androidx.arch.core:core-testing:2.0.0"
+    testImplementation 'org.mockito:mockito-core:2.7.19'
+
+    implementation project(':base')
+    implementation project(':feature:home')
+
+}
