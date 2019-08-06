@@ -14,9 +14,7 @@ import java.util.concurrent.TimeoutException
 import kotlin.Exception
 
 
-/**
- * Created by kenny on 15/10/18.
- */
+
 suspend inline fun <T> Deferred<Response<T>>.awaitAndGet(): Result<T?> {
     return try {
         val response = await()

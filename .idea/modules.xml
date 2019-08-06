@@ -10,7 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/feature/home/home.iml" filepath="$PROJECT_DIR$/feature/home/home.iml" />
       <module fileurl="file://$PROJECT_DIR$/feature/nutrition/nutrition.iml" filepath="$PROJECT_DIR$/feature/nutrition/nutrition.iml" />
       <module fileurl="file://$PROJECT_DIR$/feature/onboarding/onboarding.iml" filepath="$PROJECT_DIR$/feature/onboarding/onboarding.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/feature/workout/workout.iml" filepath="$PROJECT_DIR$/feature/workout/workout.iml" />
       <module fileurl="file://$PROJECT_DIR$/feature/workoutprogress/workoutprogress.iml" filepath="$PROJECT_DIR$/feature/workoutprogress/workoutprogress.iml" />
     </modules>
